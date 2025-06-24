@@ -1,69 +1,60 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { motion, stagger, useAnimate, useInView } from "framer-motion";
+import { useEffect } from "react";
+import {  stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
   words,
   className,
-  duration = 2,
+  duration = 0.5,
   delay = 0.2,
-  style={},
+  filter = true,
+  style = {},
 }: {
   words: string;
   className?: string;
   duration?: number;
   delay?: number;
+  filter?: boolean;
   style?: React.CSSProperties;
 }) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.7 });
 
   useEffect(() => {
-    if (isInView) {
-      animate(
-        "span",
-        {
-          opacity: 1,
-        },
-        {
-          duration,
-          delay: stagger(delay),
-        }
-      );
-    }
-  }, [isInView, animate, duration, delay]);
+    animate(
+      "span",
+      {
+        opacity: 1,
+        filter: filter ? "blur(0px)" : "none",
+      },
+      {
+        duration: duration ? duration : 1,
+        delay: stagger(delay),
+      }
+    );
+  }, [animate, delay, duration, filter]);
+
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className=" opacity-0"
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
+      <div ref={scope}>
+        {wordsArray.map((word, idx) => (
+          <span
+            key={word + idx}
+            className={`opacity-0 bg-gradient-to-r from-red-500 to-violet-500 bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(239,68,68,0.8)] drop-shadow-[0_0_12px_rgba(149,50,204,0.5)]`}
+            style={{ filter: filter ? "blur(10px)" : "none" }}
+          >
+            {word}{" "}
+          </span>
+        ))}
+      </div>
     );
   };
 
   return (
-    <motion.div
-      ref={ref}
-      style={style}
-      className={cn(className)}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.7 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-    >
+    <div className={cn(className)} style={style}>
       {renderWords()}
-    </motion.div>
+    </div>
   );
 }; 

@@ -28,6 +28,42 @@ This is a modern portfolio front-end built with **Next.js 15** and **Tailwind CS
 - Glassmorphism, gradients, and soft shadows for a contemporary look.
 - All effects and animations are accessible and performant.
 
+### Creative Hero Section
+- Scattered layout for headline, subheadline, description, button, and skill cards on large screens, with smooth fade/rotate-in animations and glassmorphism effects.
+- On small/medium screens, elements stack vertically with proper spacing and animation.
+- The description uses a glassmorphism style for a modern, soft look.
+
+### Animated Skill Cards
+- Each card animates in with a staggered, floating, and glowing effect.
+
+### TextGenerateEffect Component
+- Animated, word-by-word text reveal with support for glowing gradients.
+
+## TextGenerateEffect Usage
+
+The `TextGenerateEffect` component animates each word in a string with a fade-in and optional blur effect. You can now use the `color` prop to apply beautiful glowing gradients:
+
+```tsx
+<TextGenerateEffect
+  words="Golden Glow Text"
+  color="golden" // Golden gradient + glow
+  // ...other props
+/>
+
+<TextGenerateEffect
+  words="Custom Glow Text"
+  color="custom" // Red-violet gradient + glow
+  // ...other props
+/>
+```
+
+If you omit the `color` prop, the parent styles will apply.
+
+## Animations
+
+- All hero section elements and cards animate in with Framer Motion (fade/rotate in, staggered, and floating effects).
+- The animated text supports glowing gradients for extra visual impact.
+
 ---
 
 > **Note:** About and Projects sections will be added in future updates.
@@ -66,3 +102,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Enjoy your creative, animated portfolio!

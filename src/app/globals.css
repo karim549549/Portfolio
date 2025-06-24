@@ -152,7 +152,7 @@
 
 .card-animate {
   animation: cardActive 12s cubic-bezier(.4,2,.6,1) infinite;
-  animation: cardFloat 7s ease-in-out infinite;
+  
   will-change: transform, box-shadow, border-color;
 }
 .card-animate:nth-child(1) { animation-delay: 0s; }
@@ -197,5 +197,5 @@
 }
 
 .card-float {
-  animation: cardFloat 7s ease-in-out infinite;
+  animation: cardFloat 14s ease-in-out infinite;
 }
