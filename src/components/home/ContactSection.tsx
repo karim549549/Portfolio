@@ -16,21 +16,21 @@ const contacts = [
     href: "mailto:karimkhaled549@gmail.com",
     icon: Mail,
     tooltip: "Email",
-    display: "info@digitx.com",
+    display: "karimkhaled549@gmail.com",
   },
   {
     label: "GitHub",
     href: "https://github.com/karim549549",
     icon: Github,
     tooltip: "GitHub",
-    display: "github.com/yourusername",
+    display: "github.com/karim54954",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/karim-khaled-5711aa233/",
     icon: Linkedin,
     tooltip: "LinkedIn",
-    display: "linkedin.com/in/yourusername",
+    display: "linkedin.com/in/karim-khaled-5711aa233/",
   },
 ];
 

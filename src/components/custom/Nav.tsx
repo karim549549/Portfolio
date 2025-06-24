@@ -39,9 +39,14 @@ const NavComponent = function Nav() {
             <TooltipProvider delayDuration={100}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <button className="cursor-pointer w-10 h-10 rounded-md border border-border bg-background hover:bg-accent transition-all duration-300 ease-in-out flex items-center justify-center">
+                  <a
+                    href="/cv.pdf"
+                    download
+                    className="cursor-pointer w-10 h-10 rounded-md border border-border bg-background hover:bg-accent transition-all duration-300 ease-in-out flex items-center justify-center"
+                    aria-label="Download CV"
+                  >
                     <FileText className="w-4 h-4 text-slate-700 dark:text-white" />
-                  </button>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent side="bottom" className="text-xs">
                   <p>View CV</p>
@@ -52,17 +57,26 @@ const NavComponent = function Nav() {
           <hr className="h-8 border-l border-zinc-700/80 dark:border-white/20" />
           <li>
             <TooltipProvider delayDuration={100}>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <button className="cursor-pointer w-10 h-10 rounded-md border border-border bg-background hover:bg-accent transition-all duration-300 ease-in-out flex items-center justify-center">
-                      <Contact className="w-4 h-4 text-slate-700 dark:text-white" />
-                    </button>
-                  </TooltipTrigger>
-                  <TooltipContent side="bottom" className="text-xs">
-                    <p> Contact Now   </p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    className="cursor-pointer w-10 h-10 rounded-md border border-border bg-background hover:bg-accent transition-all duration-300 ease-in-out flex items-center justify-center"
+                    onClick={() => {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    aria-label="Scroll to Contact"
+                  >
+                    <Contact className="w-4 h-4 text-slate-700 dark:text-white" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-xs">
+                  <p> Contact Now   </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </li>
         </ul>
       </div>

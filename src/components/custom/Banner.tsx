@@ -1,15 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
+import React from "react";
 import Marquee from "react-fast-marquee";
 import { Rocket, Palette, Wrench, Smartphone, Lightbulb, Globe, Target } from "lucide-react";
-import React from "react";
 
-interface BannerProps {
-  isVisible: boolean;
-}
-
-const BannerComponent = function Banner({ isVisible }: BannerProps) {
+const BannerComponent = function Banner() {
   const bannerContent = [
     { icon: <Rocket className="w-3 h-3" />, text: "Building performant full-stack apps" },
     { icon: <Palette className="w-3 h-3" />, text: "Designing elegant, user-first interfaces" },
@@ -21,16 +14,7 @@ const BannerComponent = function Banner({ isVisible }: BannerProps) {
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 1, height: "auto" }}
-      animate={{
-        opacity: isVisible ? 1 : 0,
-        height: isVisible ? "auto" : 0,
-      }}
-      transition={{
-        duration: 0.3,
-        ease: "easeInOut",
-      }}
+    <div
       className="w-full  bg-gradient-to-r from-sky-500 via-violet-500 to-pink-300 dark:backdrop-blur-md dark:bg-white/5 border-b border-sky-200/50 dark:border-white/10 overflow-hidden relative dark:bg-gradient-to-br dark:from-sky-500/5 dark:via-violet-500/5 dark:to-pink-500/5 shadow-sm dark:shadow-[0_0_20px_rgba(14,165,233,0.05),0_0_40px_rgba(14,165,233,0.03),0_0_60px_rgba(139,92,246,0.05),0_0_80px_rgba(139,92,246,0.03),0_0_100px_rgba(236,72,153,0.05),0_0_120px_rgba(236,72,153,0.03)]"
     >
       {/* Light mode gradient overlay */}
@@ -54,7 +38,7 @@ const BannerComponent = function Banner({ isVisible }: BannerProps) {
           </span>
         ))}
       </Marquee>
-    </motion.div>
+    </div>
   );
 };
 
