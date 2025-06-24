@@ -1,17 +1,19 @@
 import Header from "@/components/custom/Header";
-import { HeroSection } from "@/components/custom/HeroSection";
-import { SectionBeamIndicator } from "@/components/ui/SectionBeamIndicator";
+import { HeroSection } from "@/components/home/HeroSection";
+import { SectionBeamIndicator } from "@/components/home/SectionBeamIndicator";
 import { Spotlight } from "@/components/ui/spotlight";
+import { ContactSection } from '@/components/home/ContactSection';
+import { WorkSection } from '@/components/home/WorkSection';
 
 const sections = [
   { id: "home", title: "home", content: <HeroSection /> },
-  { id: "about", title: "about", content: <div className="h-[80vh] flex items-center justify-center text-4xl text-white">About Section</div> },
-  { id: "projects", title: "projects", content: <div className="h-[80vh] flex items-center justify-center text-4xl text-white">Projects Section</div> },
+  { id: "work", title: "work", content: <WorkSection /> },
+  { id: "contact", title: "contact", content: <ContactSection /> },
 ];
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div className=" bg-slate-100/90 dark:bg-black">
       <Header />
       <main className="overflow-hidden relative">
         <Spotlight />

@@ -39,9 +39,13 @@ This is a modern portfolio front-end built with **Next.js 15** and **Tailwind CS
 ### TextGenerateEffect Component
 - Animated, word-by-word text reveal with support for glowing gradients.
 
-## TextGenerateEffect Usage
+### Section Beam Navigation
+- Sidebar beam with animated indicator, section number, and title, all theme-aware.
 
-The `TextGenerateEffect` component animates each word in a string with a fade-in and optional blur effect. You can now use the `color` prop to apply beautiful glowing gradients:
+### Contact Section
+- Modern, animated contact section with real links to your email, GitHub, and LinkedIn.
+- Only the icon is clickable, with tooltip and hover animation.
+- Section is fully responsive and accessible.
 
 ```tsx
 <TextGenerateEffect

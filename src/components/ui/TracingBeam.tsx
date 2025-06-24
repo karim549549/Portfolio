@@ -77,7 +77,7 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative mx-auto h-full w-full max-w-7xl", className)}
+      className={cn("relative mx-auto h-full mb-10 w-full max-w-7xl", className)}
     >
       <div className="relative w-full flex">
         {/* Beam and indicator only on lg screens, inside the container */}
@@ -130,13 +130,13 @@ export const TracingBeam = ({
                 }}
               >
                 {sectionIndex && (
-                  <span className="bg-gradient-to-r from-pink-500 via-violet-500/80 to-violet-500/70 text-transparent bg-clip-text text-6xl font-bold  drop-shadow-lg animate-bounce transition-all duration-500">
+                  <span className="bg-gradient-to-r from-pink-500 via-violet-500/80 to-violet-500/70 text-transparent bg-clip-text text-6xl font-bold drop-shadow-lg animate-bounce transition-all duration-500 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-pink-500 dark:via-violet-500/80 dark:to-violet-500/70 text-neutral-800">
                     {String(sectionIndex).padStart(2, '0')}
                   </span>
                 )}
                 {sectionTitle && (
-                  <span className="uppercase rotate-270 relative text-white tracking-[0.4rem] text-lg font-semibold ">
-                    <div className="absolute p-2 -top-1 left-2 w-30 h-full bg-violet-500/70  blur-sm -z-10" />
+                  <span className="uppercase rotate-270 relative text-neutral-800 dark:text-white tracking-[0.4rem] text-lg font-semibold ">
+                    <div className="absolute p-2 -top-1 left-2 w-30 h-full bg-violet-400/30 dark:bg-violet-500/70 blur-sm -z-10" />
                     {sectionTitle}
                   </span>
                 )}
