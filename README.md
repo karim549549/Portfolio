@@ -1,4 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Client
+
+This is a modern portfolio front-end built with **Next.js 15** and **Tailwind CSS**, featuring advanced UI/UX and animation techniques.
+
+## Features
+
+### Hero Section
+- **Animated Gradient Headline:** Eye-catching, animated text with gradient effects.
+- **Text Generate Effect:** Smooth, staggered word-by-word text reveal for the intro.
+- **Beautiful CTA Button:** Modern, interactive call-to-action with animated gradients and hover effects.
+- **Animated Cards:**
+  - Each card represents a core skill (Frontend, Backend, UI/UX, DevOps).
+  - Cards feature a combination of 3D active animation (staggered, spotlight-style) and a subtle, infinite floating effect.
+  - Card icons have synchronized glow/brightness animations.
+  - All animations are CSS-based for performance and smoothness.
+
+### Spotlight/Light Leak Effect
+- A static, soft, diagonal radial gradient "spotlight" is rendered in the background of the Hero section, simulating a light leak from the bottom right to the top left, using Tailwind's arbitrary value utilities.
+
+### Sidebar Beam Indicator
+- (Aceternity UI-inspired) vertical beam and indicator, visible on large screens, tracks the current section as the user scrolls.
+- The indicator is visually attached to the beam at the active section's vertical position, updating the section number and title dynamically.
+- The beam and indicator are contained within the main content container and do not overlap with the main content.
+
+### Modern UI/UX
+- Fully responsive layout with Tailwind CSS.
+- Custom fonts and color palette using CSS variables.
+- Glassmorphism, gradients, and soft shadows for a contemporary look.
+- All effects and animations are accessible and performant.
+
+---
+
+> **Note:** About and Projects sections will be added in future updates.
 
 ## Getting Started
 
